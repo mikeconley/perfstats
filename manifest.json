@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "PerfStat Viewer",
+  "version": "0.1",
+  "description": "A tool for displaying light-weight performance statistics.",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "applications": {
+    "gecko": {
+      "id": "perfstatviewer@mikeconley.ca",
+      "strict_min_version": "69.0a1"
+    }
+  },
+
+  "experiment_apis": {
+    "perfstats": {
+      "schema": "api/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "script": "api/api.js",
+        "paths": [["perfstats"]]
+      }
+    }
+  },
+
+  "commands": {
+    "DumpReport": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+5",
+        "mac": "MacCtrl+Shift+5"
+      },
+      "description": "Dumps a perf report to a new tab."
+    }
+  }
+}

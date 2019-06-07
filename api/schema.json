@@ -1,0 +1,16 @@
+[
+  {
+    "namespace": "perfstats",
+    "functions": [{
+      "name": "startCollection",
+      "type": "function",
+      "async": false,
+      "parameters": []
+    }, {
+      "name": "dumpStats",
+      "type": "function",
+      "async": false,
+      "parameters": []
+    }]
+  }
+]
