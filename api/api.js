@@ -9,12 +9,12 @@ this.perfstats = class extends ExtensionAPI {
         startCollection() {
           let window = Services.focus.focusedWindow;
           let mask = window.prompt("Please enter your desired collection mask (see tools/performance/PerfStats.h for a list of probes)");
-          window.windowUtils.beginPerfStatsCollection(mask);
+          ChromeUtils.beginPerfStatsCollection(mask);
         },
 
         dumpStats() {
           let window = Services.focus.focusedWindow;
-          window.windowUtils.collectPerfStats().then(value => {
+          ChromeUtils.collectPerfStats().then(value => {
             var perfStats = JSON.parse(value);
             var html = "<!DOCTYPE html>" +
               "<html lang='en'>" +
